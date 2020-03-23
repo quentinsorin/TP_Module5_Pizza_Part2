@@ -1,0 +1,39 @@
+﻿@model BO.Pizza
+
+<h4>Pizza</h4>
+<hr />
+<dl class="dl-horizontal">
+    <dt>
+        @Html.DisplayNameFor(model => model.Nom)
+    </dt>
+
+    <dd>
+        @Html.DisplayFor(model => model.Nom)
+    </dd>
+
+    <dt>
+        @Html.DisplayNameFor(model => model.Ingredients)
+    </dt>
+
+    <dd>
+        @if (Model.Ingredients != null)
+        {
+            foreach (var ingredient in Model.Ingredients)
+            {
+                @Html.DisplayFor(m => ingredient.Nom)<br />
+            }
+        }
+    </dd>
+
+    <dt>
+        @Html.DisplayNameFor(model => model.Pate)
+    </dt>
+
+    <dd>
+        @if (Model.Pate != null)
+        {
+            @Html.DisplayFor(model => model.Pate.Nom)
+        }
+    </dd>
+
+</dl>
